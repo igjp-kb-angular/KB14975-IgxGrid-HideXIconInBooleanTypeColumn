@@ -1,0 +1,21 @@
+<div class="my_wrapper">
+  <igx-grid #grid1 [data]="data" [autoGenerate]="false" [primaryKey]="'ID'" width="80%" height="300px">
+    <ng-container *ngFor="let column of columns">
+      <ng-container [ngSwitch]="column.dataType">
+        <igx-column *ngSwitchCase="'boolean'"
+          [field]="column.field"
+          [header]="column.header"
+          [dataType]="column.dataType">
+          <ng-template igxCell let-value>
+            <igx-icon *ngIf="value">check</igx-icon>
+          </ng-template>
+        </igx-column>
+        <igx-column *ngSwitchDefault
+          [field]="column.field"
+          [header]="column.header"
+          [dataType]="column.dataType">
+        </igx-column>
+      </ng-container>
+    </ng-container>
+  </igx-grid>
+</div>

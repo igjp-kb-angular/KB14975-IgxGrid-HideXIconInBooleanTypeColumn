@@ -1,0 +1,10 @@
+<div class="my_wrapper">
+  <igx-grid #grid1 [data]="data" [autoGenerate]="false" [primaryKey]="'ID'" width="80%" height="300px">
+    <igx-column field="ID" header="ID" [dataType]="'number'"></igx-column>
+    <igx-column field="Col1" header="Col1" [dataType]="'boolean'">
+      <ng-template igxCell let-value>
+        <igx-icon *ngIf="value">check</igx-icon>
+      </ng-template>
+    </igx-column>
+  </igx-grid>
+</div>
